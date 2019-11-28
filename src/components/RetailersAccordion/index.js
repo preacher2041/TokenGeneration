@@ -1,1 +1,1 @@
-export {default} from './RetailersAccordionContainer.jsx';
+export {default} from './RetailersAccordionRedux.jsx';

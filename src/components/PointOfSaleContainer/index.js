@@ -1,1 +1,1 @@
-export {default} from './PointOfSaleContainerView.jsx';
+export {default} from './PointOfSaleContainerRedux.jsx';

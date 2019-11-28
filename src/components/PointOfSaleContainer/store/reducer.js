@@ -7,16 +7,20 @@ const initialState = {
 
 export const RetailerProductReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case actionTypes.FETCH_RETAILER_DATA:
+		case actionTypes.FETCH_APPLICATION_DATA:
 			return {
 				...state,
 				dataIsLoading: true
 			};
 		
-		case actionTypes.FETCH_PRODUCT_DATA:
+		case actionTypes.FETCH_APPLICATION_DATA_SUCCESS:
+			const applicationData = action.result.applicationData;
+			
 			return {
 				...state,
-				dataIsLoading: true
+				dataIsLoading: false,
+				retailerData: applicationData.retailerData,
+				productData: applicationData.productData
 			};
 		
 		default:
