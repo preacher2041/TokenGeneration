@@ -1,0 +1,28 @@
+{
+  "productData": [
+    {
+      "productName": "Product1",
+      "productID": "P1",
+      "Price": "19.99",
+      "Currency": "£"
+    },
+    {
+      "productName": "Product2",
+      "productID": "P2",
+      "Price": "19.99",
+      "Currency": "£"
+    },
+    {
+      "productName": "Product3",
+      "productID": "P3",
+      "Price": "19.99",
+      "Currency": "£"
+    },
+    {
+      "productName": "Product4",
+      "productID": "P4",
+      "Price": "19.99",
+      "Currency": "£"
+    }
+  ]
+}
