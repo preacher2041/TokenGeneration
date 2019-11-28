@@ -1,1 +1,1 @@
-export {default} from './ReportsContainerView.jsx';
+export {default} from './ReportsContainer.jsx';
