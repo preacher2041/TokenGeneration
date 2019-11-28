@@ -1,0 +1,20 @@
+{
+  "retailerInformation": [
+    {
+      "retailerName": "Retailer1",
+      "retailerID": "R1"
+    },
+    {
+      "retailerName": "Retailer1",
+      "retailerID": "R1"
+    },
+    {
+      "retailerName": "Retailer1",
+      "retailerID": "R1"
+    },
+    {
+      "retailerName": "Retailer1",
+      "retailerID": "R1"
+    }
+  ]
+}

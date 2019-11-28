@@ -1,7 +1,8 @@
 import React from 'react';
+import RetailersAccordion from '../RetailersAccordion';
 
 const PointOfSaleContainer = () => (
-	<div>Point of Sale</div>
+	<RetailersAccordion />
 );
 
 export default PointOfSaleContainer;
