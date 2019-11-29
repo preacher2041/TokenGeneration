@@ -4,13 +4,12 @@ import { actionTypes } from './actions';
 function* fetchReportData(action) {
 	try {
 		const targetUrl = 'https://lpm7jw3h9f.execute-api.eu-west-1.amazonaws.com/dev/graphql';
-		const data = JSON.stringify({"query": "{ getReport(fromCreationDate: \"" + action.selectedDateFrom + "\", toCreationDate:\"" + action.selectedDateTo + "\")  }"});
-		console.log('Data: ', data);
+		const data = JSON.stringify({"query": "{getReport(fromCreationDate: " + action.selectedDateFrom + ", toCreationDate:" + action.selectedDateTo + ")}"});
+		console.log(data);
 		const result = yield fetch( targetUrl, {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json',
-				'cache-control': 'no-cache'
+				'Content-Type': 'application/json'
 			},
 			body: data
 		})
