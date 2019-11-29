@@ -4,7 +4,7 @@ import { Button, Typography } from '@material-ui/core';
 const ProductRowView = ({rowData, handleClick}) => (
 	<div>
 		<Typography>{rowData.productName} {rowData.productCurrency}{rowData.productPrice}</Typography>
-		<Button variant="contained" onClick={handleClick}>Buy voucher</Button>
+		<Button variant="contained" onClick={() => handleClick(rowData.typeID)}>Buy voucher</Button>
 	</div>
 );
 

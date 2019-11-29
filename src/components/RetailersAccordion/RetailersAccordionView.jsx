@@ -15,7 +15,9 @@ const RetailersAccordionView = ({index, accordionData, expanded, handleChange}) 
 				<Typography className={styles.heading}>{accordionData.retailerName}</Typography>
 			</ExpansionPanelSummary>
 			<ExpansionPanelDetails>
-				<ProductRow />
+				<ProductRow
+					retailerID={accordionData.retailerID}
+				/>
 			</ExpansionPanelDetails>
 		</ExpansionPanel>
 	</div>

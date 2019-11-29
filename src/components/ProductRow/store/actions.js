@@ -4,8 +4,10 @@ export const actionTypes = {
 	POST_TOKEN_DATA_FAILURE: 'POST_TOKEN_DATA_FAILURE',
 };
 
-export const postTokenData = () => ({
-	type: actionTypes.POST_TOKEN_DATA
+export const postTokenData = (typeID, retailerID) => ({
+	type: actionTypes.POST_TOKEN_DATA,
+	typeID,
+	retailerID
 });
 
 export const postTokenDataSuccess = (result) => ({
