@@ -14,23 +14,19 @@ const ResultsRow = ({rows}) => (
 		<Table className={styles.formControl} aria-label="simple table">
 			<TableHead>
 				<TableRow>
-					<TableCell>Dessert (100g serving)</TableCell>
-					<TableCell align="right">Calories</TableCell>
-					<TableCell align="right">Fat&nbsp;(g)</TableCell>
-					<TableCell align="right">Carbs&nbsp;(g)</TableCell>
-					<TableCell align="right">Protein&nbsp;(g)</TableCell>
+					<TableCell>Voucher type ID</TableCell>
+					<TableCell align="right">Retailer ID</TableCell>
+					<TableCell align="right">Count</TableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
 				{rows.map(row => (
-					<TableRow key={row.name}>
+					<TableRow key={row.voucherTypeId}>
 						<TableCell component="th" scope="row">
-							{row.name}
+							{row.voucherTypeId}
 						</TableCell>
-						<TableCell align="right">{row.calories}</TableCell>
-						<TableCell align="right">{row.fat}</TableCell>
-						<TableCell align="right">{row.carbs}</TableCell>
-						<TableCell align="right">{row.protein}</TableCell>
+						<TableCell align="right">{row.retailerId}</TableCell>
+						<TableCell align="right">{row.count}</TableCell>
 					</TableRow>
 				))}
 			</TableBody>

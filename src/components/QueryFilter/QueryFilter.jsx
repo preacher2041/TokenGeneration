@@ -15,67 +15,29 @@ import {
 import {styles} from './QueryFilterStyle'
 
 
-const QueryFilter = ({selectedDate, handleDateChange}) => (
+const QueryFilter = ({selectedDateFrom, handleDateChangeFrom, selectedDateTo, handleDateChangeTo, handleSubmit}) => (
 	<div>
-	<FormControl className={styles.formControl} >
-		<InputLabel id="voucher-id-label">Voucher ID</InputLabel>
-		<Select
-			label="voucher-id-label"
-			id="voucher-id-select"
-			className={styles.selectEmpty}
-		>
-			<MenuItem value={10}>123</MenuItem>
-			<MenuItem value={20}>456</MenuItem>
-			<MenuItem value={30}>789</MenuItem>
-		</Select>
-		</FormControl>
-		<FormControl className={styles.formControl} >
-			<InputLabel id="retailer-id-label">Retailer ID</InputLabel>
-			<Select
-				label="retailer-id-label"
-				id="retailer-id-select"
-				className={styles.selectEmpty}
-			>
-				<MenuItem value={10}>Ten</MenuItem>
-				<MenuItem value={20}>Twenty</MenuItem>
-				<MenuItem value={30}>Thirty</MenuItem>
-			</Select>
-		</FormControl>
-	<FormControl className={styles.formControl} >
-		<InputLabel id="date-from-label">Date from</InputLabel>
-		<Select
-			label="date-from-label"
-			id="date-from-select"
-			className={styles.selectEmpty}
-		>
-			<MenuItem value={10}>Ten</MenuItem>
-			<MenuItem value={20}>Twenty</MenuItem>
-			<MenuItem value={30}>Thirty</MenuItem>
-		</Select>
-		</FormControl>
 	<FormControl className={styles.formControl} >
 		<MuiPickersUtilsProvider utils={DateFnsUtils}>
 			<Grid container justify="space-around">
 				<KeyboardDatePicker
-					disableToolbar
-					variant="inline"
 					format="MM/dd/yyyy"
 					margin="normal"
-					id="date-picker-inline"
-					label="Date picker inline"
-					value={selectedDate}
-					onChange={handleDateChange}
+					id="date-picker-from"
+					label="Date from"
+					value={selectedDateFrom}
+					onChange={handleDateChangeFrom}
 					KeyboardButtonProps={{
 						'aria-label': 'change date',
 					}}
 				/>
 				<KeyboardDatePicker
 					margin="normal"
-					id="date-picker-dialog"
-					label="Date picker dialog"
+					id="date-picker-to"
+					label="Date to"
 					format="MM/dd/yyyy"
-					value={selectedDate}
-					onChange={handleDateChange}
+					value={selectedDateTo}
+					onChange={handleDateChangeTo}
 					KeyboardButtonProps={{
 						'aria-label': 'change date',
 					}}
@@ -83,7 +45,7 @@ const QueryFilter = ({selectedDate, handleDateChange}) => (
 			</Grid>
 		</MuiPickersUtilsProvider>
 	</FormControl>
-		<Button />
+		<Button onClick={handleSubmit} type="submit">Submit</Button>
 		</div>
 );
 

@@ -2,19 +2,22 @@ import React from 'react';
 import ResultsRow from '../../components/ResultsRow';
 
 
-const ResultsContainer = () => {
+const ResultsContainer = ({reportData}) => {
 	// The first commit of Material-UI
 
-	const createData = (name, calories, fat, carbs, protein) => {
-		return { name, calories, fat, carbs, protein };
+	const createData = (voucherTypeId, retailerId, count) => {
+		return { voucherTypeId, retailerId, count };
 	};
+	console.log(reportData);
 
 	const rows = [
-		createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-		createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-		createData('Eclair', 262, 16.0, 24, 6.0),
-		createData('Cupcake', 305, 3.7, 67, 4.3),
-		createData('Gingerbread', 356, 16.0, 49, 3.9),
+/*		reportData.map((reportData, i) => {
+			createData(reportData)
+		}),*/
+
+		createData('SCEE-XX-S0035764', 'AMA', 13),
+		createData('SCEE-XX-S0035763', 'TES', 122),
+		createData('SCEE-XX-S0035762', 'GAM', 112),
 	];
 	return (
 		<ResultsRow rows={rows}  />
