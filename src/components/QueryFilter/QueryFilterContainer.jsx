@@ -38,7 +38,7 @@
         };
 
         return (
-            <Container maxWidth="sm">
+            <Container maxWidth="md">
                 <QueryFilter selectedDateFrom={selectedDateFrom} handleDateChangeFrom={handleDateChangeFrom} selectedDateTo={selectedDateTo} handleDateChangeTo={handleDateChangeTo} handleSubmit={handleSubmit}  />
                 {reportData !== null ? <ResultsContainer reportData={reportData} /> : null}
                 {loading ? <Loader  /> : null}
