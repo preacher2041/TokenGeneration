@@ -1,0 +1,48 @@
+{
+  "applicationData": {
+    "retailerData": [
+      {
+        "retailerName": "Retailer1",
+        "retailerID": "R1"
+      },
+      {
+        "retailerName": "Retailer2",
+        "retailerID": "R2"
+      },
+      {
+        "retailerName": "Retailer3",
+        "retailerID": "R3"
+      },
+      {
+        "retailerName": "Retailer4",
+        "retailerID": "R4"
+      }
+    ],
+    "productData": [
+      {
+        "productName": "Product1",
+        "productID": "P1",
+        "productPrice": "19.99",
+        "productCurrency": "£"
+      },
+      {
+        "productName": "Product2",
+        "productID": "P2",
+        "productPrice": "19.99",
+        "productCurrency": "£"
+      },
+      {
+        "productName": "Product3",
+        "productID": "P3",
+        "productPrice": "19.99",
+        "productCurrency": "£"
+      },
+      {
+        "productName": "Product4",
+        "productID": "P4",
+        "productPrice": "19.99",
+        "productCurrency": "£"
+      }
+    ]
+  }
+}
