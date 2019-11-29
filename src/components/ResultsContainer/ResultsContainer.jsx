@@ -2,23 +2,22 @@ import React from 'react';
 import ResultsRow from '../../components/ResultsRow';
 
 
-const ResultsContainer = ({reportData}) => {
+const ResultsContainer = (reportData) => {
 	// The first commit of Material-UI
 
 	const createData = (voucherTypeId, retailerId, count) => {
 		return { voucherTypeId, retailerId, count };
 	};
-	console.log(reportData);
 
-	const rows = [
-/*		reportData.map((reportData, i) => {
-			createData(reportData)
-		}),*/
+	const rows = [];
 
-		createData('SCEE-XX-S0035764', 'AMA', 13),
-		createData('SCEE-XX-S0035763', 'TES', 122),
-		createData('SCEE-XX-S0035762', 'GAM', 112),
-	];
+	if(reportData !== null){
+		console.log(reportData.reportData);
+		reportData.reportData.map((reportDataItem, i) => {
+		 rows.push({voucherTypeId: reportDataItem.voucherTypeId, retailerId: reportDataItem.retailerId, count: reportDataItem.count})
+		 });
+	}
+
 	return (
 		<ResultsRow rows={rows}  />
 	)
