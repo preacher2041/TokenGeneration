@@ -29,7 +29,7 @@
             const response = await fetch('https://lpm7jw3h9f.execute-api.eu-west-1.amazonaws.com/dev/graphql', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({"query": "{ getReport(fromCreationDate: \"" + selectedDateFrom + "\", toCreationDate:\"" + selectedDateTo + "\") { voucherTypeId retailerId count } }"}),
+                body: JSON.stringify({"query": "{ getReport(fromCreationDate: \"" + selectedDateFrom + "\", toCreationDate:\"" + selectedDateTo + "\") { voucherTypeId retailerId count countNotDelivered} }"}),
             });
                 const json = await response.json();
                 setReportData(json.data);

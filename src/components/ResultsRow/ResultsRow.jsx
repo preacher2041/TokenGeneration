@@ -16,7 +16,8 @@ const ResultsRow = ({rows}) => (
 				<TableRow>
 					<TableCell>Voucher type ID</TableCell>
 					<TableCell align="right">Retailer ID</TableCell>
-					<TableCell align="right">Count</TableCell>
+					<TableCell align="right">Delivered</TableCell>
+					<TableCell align="right">Not delivered</TableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
@@ -26,7 +27,8 @@ const ResultsRow = ({rows}) => (
 							{row.voucherTypeId}
 						</TableCell>
 						<TableCell align="right">{row.retailerId}</TableCell>
-						<TableCell align="right">{row.count}</TableCell>
+						<TableCell align="right">{row.count - row.countNotDelivered}</TableCell>
+						<TableCell align="right">{row.countNotDelivered}</TableCell>
 					</TableRow>
 				))}
 			</TableBody>
