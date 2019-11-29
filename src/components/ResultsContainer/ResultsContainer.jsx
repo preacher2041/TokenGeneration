@@ -9,7 +9,7 @@ const ResultsContainer = (reportData) => {
 
 	if(reportData !== null){
 		console.log(reportData.reportData);
-		reportData.reportData.map((reportDataItem, i) => {
+		reportData.reportData.getReport.map((reportDataItem, i) => {
 		 rows.push({voucherTypeId: reportDataItem.voucherTypeId, retailerId: reportDataItem.retailerId, count: reportDataItem.count})
 		 });
 	}

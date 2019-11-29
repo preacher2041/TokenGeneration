@@ -4,6 +4,7 @@
     import {withStyles, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography} from '@material-ui/core';
     import {styles} from './QueryFilterStyle';
     import Loader from './Loader';
+    import Container from '@material-ui/core/Container';
     import * as moment  from 'moment';
 
     const Pickers = () => {
@@ -25,31 +26,23 @@
         const handleSubmit = async () => {
             setReportData(null);
             setLoading(true);
-            /*const response = await fetch('https://lpm7jw3h9f.execute-api.eu-west-1.amazonaws.com/dev/graphql', {
+            const response = await fetch('https://lpm7jw3h9f.execute-api.eu-west-1.amazonaws.com/dev/graphql', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({"query": "{ getReport(fromCreationDate: " + selectedDateFrom + ", toCreationDate:" + selectedDateTo + ") { voucherTypeId retailerId count } }"}),
+                body: JSON.stringify({"query": "{ getReport(fromCreationDate: \"" + selectedDateFrom + "\", toCreationDate:\"" + selectedDateTo + "\") { voucherTypeId retailerId count } }"}),
             });
                 const json = await response.json();
-                reportData = json.data;
                 setReportData(json.data);
-             setLoading(false);
-                */
-                const mockJson = {"data":{"getReport":[{"voucherTypeId":"SCEE-XX-S0035764","retailerId":"AMA","count":1},{"voucherTypeId":"SCEE-XX-S0035765","retailerId":"TES","count":10}, {"voucherTypeId":"SCEE-XX-S0035766","retailerId":"GAM","count":20}]}};
-
-            setTimeout(() =>{
-                    setReportData(mockJson.data.getReport);
-                    setLoading(false);
-            }, 1000);
+                setLoading(false);
 
         };
 
         return (
-            <div className={styles.root}>
+            <Container maxWidth="sm">
                 <QueryFilter selectedDateFrom={selectedDateFrom} handleDateChangeFrom={handleDateChangeFrom} selectedDateTo={selectedDateTo} handleDateChangeTo={handleDateChangeTo} handleSubmit={handleSubmit}  />
                 {reportData !== null ? <ResultsContainer reportData={reportData} /> : null}
                 {loading ? <Loader  /> : null}
-            </div>
+            </Container>
         )
     };
 
