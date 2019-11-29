@@ -13,7 +13,7 @@ export const TokenReducer = (state = initialState, action) => {
 			};
 		
 		case actionTypes.POST_TOKEN_DATA_SUCCESS:
-			const tokenData = action.result.tokenData;
+			const tokenData = action.result;
 			
 			return {
 				...state,

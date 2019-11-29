@@ -1,10 +1,11 @@
 import React, {Fragment} from 'react';
 import ProductRowView from './ProductRowView';
 
-const ProductRowContainer = ({productData, postTokenData}) => {
-	const handleClick = () => {
-		console.log('Container: API Call');
-		postTokenData();
+const ProductRowContainer = ({productData, postTokenData, retailerID}) => {
+	
+	const handleClick = (typeID) => {
+		console.log('typeID: ', typeID);
+		postTokenData(typeID, retailerID);
 	};
 	
 	return (

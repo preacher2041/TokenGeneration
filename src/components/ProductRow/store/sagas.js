@@ -1,17 +1,21 @@
 import {put, takeEvery} from 'redux-saga/effects';
 import { actionTypes } from './actions';
 
-function* postTokenData() {
+function* postTokenData(action) {
 	try {
-		const url = 'https://lpm7jw3h9f.execute-api.eu-west-1.amazonaws.com/dev/vouchers/';
-		const data = {
-			"typeId": "SCEE-XX-S0035764",
-			"retailerId": "PAM"
-		};
-		const result = yield fetch( url, {
+		const proxyURL = 'https://cors-anywhere.herokuapp.com/';
+		const targetUrl = 'https://lpm7jw3h9f.execute-api.eu-west-1.amazonaws.com/dev/vouchers/';
+		const data = JSON.stringify({
+			"typeId": action.typeID,
+			"retailerId": action.retailerID
+		});
+		const result = yield fetch( proxyURL + targetUrl, {
 			method: 'POST',
-			mode: 'no-cors',
-			body: JSON.stringify(data)
+			headers: {
+				'Content-Type': 'application/json',
+				'cache-control': 'no-cache'
+			},
+			body: data
 		})
 			.then(response => response.json());
 		
