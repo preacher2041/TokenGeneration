@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import RetailersAccordion from '../RetailersAccordion';
+import VoucherDisplay from '../VoucherDisplay';
 
 const PointOfSaleContainer = () => (
-	<RetailersAccordion />
+	
+	<Fragment>
+		<RetailersAccordion />
+		<VoucherDisplay />
+	</Fragment>
 );
 
 export default PointOfSaleContainer;
