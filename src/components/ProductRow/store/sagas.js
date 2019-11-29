@@ -13,7 +13,9 @@ function* postTokenData(action) {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'cache-control': 'no-cache'
+				'cache-control': 'no-cache',
+				'Test-Fail' : action.errorHandling.errorHandlingEnabled
+				
 			},
 			body: data
 		})

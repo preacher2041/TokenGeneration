@@ -5,7 +5,7 @@ import {ExpandMore} from '@material-ui/icons';
 
 import ProductRow from '../ProductRow';
 
-const RetailersAccordionView = ({index, accordionData, expanded, handleChange}) => (
+const RetailersAccordionView = ({index, accordionData, expanded, handleChange, errorHandling}) => (
 	<div className={styles.root}>
 		<ExpansionPanel expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
 			<ExpansionPanelSummary
@@ -17,6 +17,7 @@ const RetailersAccordionView = ({index, accordionData, expanded, handleChange}) 
 			<ExpansionPanelDetails>
 				<ProductRow
 					retailerID={accordionData.retailerID}
+					errorHandling={errorHandling}
 				/>
 			</ExpansionPanelDetails>
 		</ExpansionPanel>
