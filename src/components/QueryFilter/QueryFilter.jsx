@@ -21,7 +21,7 @@ const QueryFilter = ({selectedDateFrom, handleDateChangeFrom, selectedDateTo, ha
 		<MuiPickersUtilsProvider utils={DateFnsUtils}>
 			<Grid container justify="space-around">
 				<KeyboardDatePicker
-					format="MM/dd/yyyy"
+					format="dd/MM/yyyy"
 					margin="normal"
 					id="date-picker-from"
 					label="Date from"
@@ -35,7 +35,7 @@ const QueryFilter = ({selectedDateFrom, handleDateChangeFrom, selectedDateTo, ha
 					margin="normal"
 					id="date-picker-to"
 					label="Date to"
-					format="MM/dd/yyyy"
+					format="dd/MM/yyyy"
 					value={selectedDateTo}
 					onChange={handleDateChangeTo}
 					KeyboardButtonProps={{

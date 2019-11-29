@@ -9,7 +9,7 @@
 
     const Pickers = () => {
         // The first commit of Material-UI
-        const [selectedDateFrom, setSelectedDateFrom] = useState(moment(new Date(Date.now())).toISOString());
+        const [selectedDateFrom, setSelectedDateFrom] = useState(moment(new Date(Date.now())).subtract(3, 'months').toISOString());
         const [selectedDateTo, setSelectedDateTo] = useState(moment(new Date(Date.now())).toISOString());
         const [reportData, setReportData] = useState(null);
         const [loading, setLoading] = useState(false);
