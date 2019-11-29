@@ -4,7 +4,6 @@ import ProductRowView from './ProductRowView';
 const ProductRowContainer = ({productData, postTokenData, retailerID}) => {
 	
 	const handleClick = (typeID) => {
-		console.log('typeID: ', typeID);
 		postTokenData(typeID, retailerID);
 	};
 	

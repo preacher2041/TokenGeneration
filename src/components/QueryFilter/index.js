@@ -1,1 +1,1 @@
-export {default} from './QueryFilterContainer.jsx';
+export {default} from './QueryFilterRedux.jsx';

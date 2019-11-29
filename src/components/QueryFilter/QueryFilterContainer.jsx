@@ -7,7 +7,7 @@
     import Container from '@material-ui/core/Container';
     import * as moment  from 'moment';
 
-    const Pickers = () => {
+    const Pickers = ({fetchReportData}) => {
         // The first commit of Material-UI
         const [selectedDateFrom, setSelectedDateFrom] = useState(moment(new Date(Date.now())).subtract(3, 'months').toISOString());
         const [selectedDateTo, setSelectedDateTo] = useState(moment(new Date(Date.now())).toISOString());
@@ -23,18 +23,8 @@
 
         };
 
-        const handleSubmit = async () => {
-            setReportData(null);
-            setLoading(true);
-            const response = await fetch('https://lpm7jw3h9f.execute-api.eu-west-1.amazonaws.com/dev/graphql', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({"query": "{ getReport(fromCreationDate: \"" + selectedDateFrom + "\", toCreationDate:\"" + selectedDateTo + "\") { voucherTypeId retailerId count } }"}),
-            });
-                const json = await response.json();
-                setReportData(json.data);
-                setLoading(false);
-
+        const handleSubmit = () => {
+            fetchReportData(selectedDateFrom, selectedDateTo);
         };
 
         return (
