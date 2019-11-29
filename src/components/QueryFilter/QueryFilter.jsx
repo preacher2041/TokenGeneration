@@ -45,7 +45,7 @@ const QueryFilter = ({selectedDateFrom, handleDateChangeFrom, selectedDateTo, ha
 			</Grid>
 		</MuiPickersUtilsProvider>
 	</FormControl>
-		<Button onClick={handleSubmit} type="submit">Submit</Button>
+		<Button variant="contained" color="primary" onClick={handleSubmit} type="submit">Submit</Button>
 		</div>
 );
 

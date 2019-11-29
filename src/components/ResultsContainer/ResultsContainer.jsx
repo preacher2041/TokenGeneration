@@ -5,10 +5,6 @@ import ResultsRow from '../../components/ResultsRow';
 const ResultsContainer = (reportData) => {
 	// The first commit of Material-UI
 
-	const createData = (voucherTypeId, retailerId, count) => {
-		return { voucherTypeId, retailerId, count };
-	};
-
 	const rows = [];
 
 	if(reportData !== null){
